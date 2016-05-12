@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Welcome to Rednerd Blog #{@user.username}"
+      flash[:success] = "Welcome to PTAdhoc #{@user.username}"
       redirect_to articles_path
     else
       render 'new'
