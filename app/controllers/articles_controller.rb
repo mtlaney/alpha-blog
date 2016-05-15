@@ -9,6 +9,10 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    if logged_in? and !current_user.admin?
+      flash[:danger] = "Only admin users can perform that actions"
+      redirect_to root_path
+    end
   end
 
   def edit

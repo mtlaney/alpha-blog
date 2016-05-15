@@ -16,6 +16,8 @@
       <ul class="nav navbar-nav">
         <% if logged_in? %>
           <li> <%= link_to "Open Adhocs", articles_path %> </li>
+        <% end %>
+        <% if logged_in? && current_user.admin? %>
           <li> <%= link_to "Users", users_path %></li>
           <li> <%= link_to "New Adhoc Request", new_article_path %></li>
         <% end %>
@@ -34,9 +36,6 @@
             <ul class="dropdown-menu">
               <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
               <li><%= link_to "View your profile", user_path(current_user) %></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
             </ul>
           </li>
         <% else %>

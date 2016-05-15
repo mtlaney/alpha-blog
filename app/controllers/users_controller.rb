@@ -9,6 +9,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
+    if logged_in? and !current_user.admin?
+      flash[:danger] = "Only admin users can perform that actions"
+      redirect_to root_path
+    end
   end
 
   def create
