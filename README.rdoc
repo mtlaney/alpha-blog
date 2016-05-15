@@ -1,1 +1,1 @@
-Repository for my first blog app Ruby on Rails Developer
+Repository for my first webapp Ruby on Rails Developer
