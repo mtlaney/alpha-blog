@@ -17,6 +17,9 @@ class ArticlesController < ApplicationController
 
   def edit
   end
+  
+  def origin
+  end
 
   def create
     @article = Article.new(article_params)
@@ -62,5 +65,6 @@ class ArticlesController < ApplicationController
       redirect_to root_path
     end
   end
+
 
 end
