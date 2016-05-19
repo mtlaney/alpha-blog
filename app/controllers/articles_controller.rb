@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
 
   def edit
   end
-  
+
   def origin
   end
 
